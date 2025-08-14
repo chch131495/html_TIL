@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>표 | HTML</title>
+    <!-- title 아래 favicon + reset.css 연결 필수! -->
+    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/reset.css">
+    <style>
+        #h1 {
+            margin-bottom:14px;
+            margin-top:10px;
+            font-weight:700;
+        }
+        #t1 {
+            border:2px solid #000; /* 바깥쪽 선이 보이는 곳 (테두리) */
+            /* 테이블 폭 입력시 열은 자동으로 크기 나눠가짐, 열의 개수에 따라 값 입력하기 */
+            width:200px;
+            height:100px;
+        }
+        #t1 tr {}
+        #t1 tr  th {background-color:blue;}
+        #t1 tr td {
+            border:1px solid #f00;/* 실제 보이는 칸이(안쪽) td여서 td에다가 작성 */
+            width:100px;/* 자동으로 크기가 주는것을 방지할려면 td에도 값을 정해주면 된다. */
+            padding-top:20px;
+            padding-bottom:20px;
+        }
+        #h2 {}
+        #t2 {
+            background-color:aqua;
+            border:2px solid #fff;
+            width:300px; height:60px;
+        }
+        #t2 tr {}
+        #t2 tr th {
+            background-color:aqua;
+            border:2px solid #fff; color:#fff;
+            width:150px;
+            padding-top:8px; padding-bottom:8px;
+            padding-left:15px;
+        }
+        #t2 tr  td {
+            border:2px solid #fff; color:#fff;
+            width:150px;
+            padding-top:8px; padding-bottom:8px;
+            padding-left:15px;
+        }
+        #meeting {
+            border:5px solid #000; width:400px;
+        }
+        #meeting thead {background-color:pink;}
+        #meeting thead tr {}
+        #meeting thead tr th {}
+        #meeting tbody {background-color:beige;}
+        #meeting tbody tr {}
+        #meeting tbody tr th {}
+        #meeting tbody tr td {}
+        #meeting tfoot {background-color:aqua;}
+        #meeting tfoot tr {}
+        #meeting tfoot tr td {}
+        #meeting tfoot tr th {}
+    </style>
+</head>
+<body>
+    <h1>2행 2열 표</h1>
+    <table id="t1">
+        <tr>
+            <th>1열(제목)</th>
+            <td>2열</td>
+        </tr>
+        <tr>
+            <td>1열</td>
+            <td>2열</td>
+        </tr>
+    </table>
+    <h2>3행 2열</h2>
+    <table id="t2">
+        <tr><!-- 1행 -->
+            <th>1열</th>
+            <th>2열</th>
+        </tr>
+        <tr><!-- 2행 -->
+            <td>1열</td>
+            <td>2열</td>
+        </tr>
+        <tr><!-- 3행 -->
+            <td>1열</td>
+            <td>2열</td>
+        </tr>
+    </table>
+    <h1>국회 회의록 시스템</h1>
+    <table id="meeting">
+        <!-- 행그룹-> 행-> 열(제목/내용) -->
+        <thead>
+            <tr>
+                <th>선수</th>
+                <th>출석횟수</th>
+            </tr>
+        </thead>
+        <tfoot>
+            <tr>
+                <td>평균</td>
+                <th>99.3</th>
+            </tr>
+        </tfoot>
+        <tbody>
+            <tr>
+                <th>초선(152)</th>
+                <td>105.4</td>
+            </tr>
+            <tr>
+                <th>재선(67)</th>
+                <td>94.4</td>
+            </tr>
+        </tbody>
+    </table>
+    <h1>요금제</h1>
+    <table id="plan">
+        <thead>
+            <th>업체</th>
+            <th>요금제명</th>
+            <th>데이터</th>
+            <th>음성</th>
+            <th>문자</th>
+            <th>월 정액<br><span>(부가세 포함금액)</span></th>
+            <th>상세</th>
+            <th>비교</th>
+        </thead>
+        <tbody>
+            <tr>
+                <th><strong>Amobile</strong></th>
+                <th><em>추천</em><br>요금폭탄방지 매일 2GR</th>
+                <td>11GB<br><span>(초과시 매일 2GR+3MB 속도로 무제한 이용)</span></td>
+                <td>기본제공<br><span>(영상/부가 300분)</span></td>
+                <td>기본제공</td>
+                <td>월<strong>20,900</strong>원</td>
+                <td><a href="#"><img src="" alt="가입하기"></a></td>
+                <td><a href="#"><img src="" alt="선택하기"></a></td>
+            </tr>
+        </tbody>
+    </table>
+</body>
+</html>
