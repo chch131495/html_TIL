@@ -60,6 +60,13 @@
             color:#EE239B;
             font-weight:700;
         }
+        /* git 명령어 표 그룹선택자 */
+        #git,
+        #git thead th, th {}
+        #git tbody th, th {}
+        #git tbody th, td {
+            border:1px solid #000;
+        }
     </style>
 </head>
 <body>
@@ -86,7 +93,7 @@
             <!-- 3행 -->
             <tr>
                 <th>국제선불 300M</th>
-                <td><em>40,700원</em></td>
+                <td><em>40,700</em>원</td>
                 <td>집/이동전화 무제한(국제전화 매일20분)</td>
                 <td>기본제공</td>
                 <td>300MB+3Mbps</td>
@@ -94,7 +101,7 @@
             <!-- 4행 -->
             <tr>
                 <th>국제선불 300M</th>
-                <td><em>40,700원</em></td>
+                <td><em>40,700</em>원</td>
                 <td>집/이동전화 무제한(국제전화 매일20분)</td>
                 <td>기본제공</td>
                 <td>300MB+3Mbps</td>
@@ -102,7 +109,7 @@
             <!-- 5행 -->
             <tr>
                 <th>국제선불 300M</th>
-                <td><em>40,700원</em></td>
+                <td><em>40,700</em>원</td>
                 <td>집/이동전화 무제한(국제전화 매일20분)</td>
                 <td>기본제공</td>
                 <td>300MB+3Mbps</td>
@@ -122,6 +129,38 @@
             <td>3</td>
             <!-- <td>4</td> -->
         </tr>
+    </table>
+    <hr>
+    <table id="git">
+        <thead>
+            <tr>
+                <th scope="col">프로그래밍 종류</th>
+                <th scope="col">명령어</th>
+                <th scope="col">해석</th>
+            </tr>
+        </thead>
+        <tbody><!-- 1 -->
+            <tr> 
+                <th rowspan="4" scope="row">Git</th>
+                <th scope="row">git init</th>
+                <td>깃 폴더 경로 설정</td>
+            </tr>
+            <tr><!-- 2 -->
+                <!-- <th>Git</th> -->
+                <th scope="row">git remote add origin</th>
+                <td>깃허브 원격저장소 연결</td>
+            </tr>
+            <tr><!-- 3 -->
+                <!-- <th>Git</th> -->
+                <th scope="row">git status</th>
+                <td>변경상태&스테이징 대기상태</td>
+            </tr>
+            <tr><!-- 4 -->
+                <!-- <th>Git</th> -->
+                <th scope="row">git log</th>
+                <td>pusl 업로드한 기록(커밋포함)확인</td>
+            </tr>
+        </tbody>
     </table>
 </body>
 </html>
