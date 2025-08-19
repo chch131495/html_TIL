@@ -26,22 +26,22 @@
         <!-- SIGN IN OPEN -->
         <div class="sign_in_contents">
             <form action="#" method="post" id="in_frm"> <!-- 로그인 정보는 개인정보이기때문에 보안을 유해서 post를 사용. -->
-            <ul class="id_pw_g">
-                <li><input type="text" name="uers_name" id="uers_name" class="name_pw" placeholder="Uersname"></li>
-                <li><input type="password" name="uers_pw" id="uers_pw" class="name_pw" placeholder="Password"></li>
-            </ul>
-            <div class="login_status">
-                <input type="checkbox" name="login_y_g" id="login_y">
-                <!-- checkbox 대체용 배경이미지 적용태그 -->
-                <span class="chk_bg"></span>
-                <!-- id를 선택할때 체크박스에 표시하기 위해서 lable for에 id이름을 똑같이 적용하는 것.(선택요소를 사용할때, label를 사용함.) -->
-                <label for="login_y">stay signed in</label>
-            </div>
+                <ul class="id_pw_g">
+                    <li><input type="text" name="uers_name" id="uers_name" class="name_pw" placeholder="Uersname"></li>
+                    <li><input type="password" name="uers_pw" id="uers_pw" class="name_pw" placeholder="Password"></li>
+                </ul>
+                <div class="login_status">
+                    <input type="checkbox" name="login_y_g" id="login_y">
+                    <!-- checkbox 대체용 배경이미지 적용태그 -->
+                    <span class="chk_bg"></span>
+                    <!-- id를 선택할때 체크박스에 표시하기 위해서 lable for에 id이름을 똑같이 적용하는 것.(선택요소를 사용할때, label를 사용함.) -->
+                    <label for="login_y">stay signed in</label>
+                </div>
+                <div class="btn_forget">
+                    <button type="submit" id="sign_in_btn">SIGN IN</button>
+                    <a href="#" class="forget_pw">Forget Password?</a>
+                </div>
             </form>
-        </div>
-        <div class="btn_forget">
-            <button type="submit" id="sign_in_btn">SIGN IN</button>
-            <a href="#" class="forget_pw">Forget Password?</a>
         </div>
         <!-- SIGN UP OPEN -->
         <div class="sign_up_contents"></div>
