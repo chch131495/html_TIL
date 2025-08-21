@@ -1,10 +1,8 @@
 /* 마켓컬리 회원가입 양식 */
 body {background-color:#f5f5f5;}
 #wrap {
-    border:3px solid red;
     width:612px; margin:0 auto;
-    padding:41px 0 0;
-}
+    padding:41px 0 0;}
 #wrap h1 {
     text-align:center;
     margin:0 0 41px;
@@ -32,7 +30,10 @@ body {background-color:#f5f5f5;}
     /* display:inline-block; */
     float:left; clear:both;
 }
+/* --------------------------버튼 hover 공통 */
+#wrap #join_frm .btn_design:hover {background:#df15ff !important;} /* 강제로 우선순위 앞으로 */
 /*-----------------------(1~6) 공통클라스*/
+#wrap #join_frm .user_info dd .input_de:focus {border:1px solid #9E00B7;}
 #wrap #join_frm .user_info dd .input_de {
     border:1px solid #aaa; border-radius:5px;
     width:100%; padding:10px;
@@ -132,7 +133,8 @@ body {background-color:#f5f5f5;}
     padding-left:17px; font-size:0.875rem;
 }
 /* ------------------------------------9.생년월일 */
-#wrap #join_frm .user_info dd .birthday {width:50px; text-align:center; }
+#wrap #join_frm .user_info dd .birthday {border:1px solid #fff; width:50px; text-align:center; }
+#wrap #join_frm .user_info dd .birthday:focus {border:1px solid #9E00B7;}
 #wrap #join_frm .user_info dd:nth-child(26) {
     text-align:center;
     background-color:#fff;
