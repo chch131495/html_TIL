@@ -1,0 +1,99 @@
+#wrap .sns {
+    text-align:center;
+    margin:14px 0 0;
+}
+#wrap .sns a {}
+/* 형제태그에다가 margin을 넣어준다. */
+#wrap .sns a:nth-child(2) {margin:0 20px;}
+#wrap .sns a img {}
+#wrap #join_frm {}
+/* -------------------------가입정보 */
+#wrap #join_frm .contents {}
+#wrap #join_frm .contents .info {}
+#wrap #join_frm .contents .info dt {
+    font-size:1.063rem; font-weight:500;
+    margin:22px 0 10px;
+}
+#wrap #join_frm .contents .info dt:first-child {margin-top:0;}
+/* float의 오류를 없애는 것이 overflow=hiddden */
+#wrap #join_frm .contents .info dd {clear:both;overflow:hidden;}
+/* `+` 바로 옆에 있는 형제를 */
+#wrap #join_frm .contents .info dt+dd {margin:0 0 10px;}
+/* -------------------------------------------1.이메일 */
+/* -------------------------------------------공통(user_) */
+#wrap #join_frm .contents .info dd input[id^=user] {
+    border-radius:3px;
+    border:1px solid #bbb;
+    height:36px;
+    padding-left:10px;
+    width:100%;
+    background:#fff;
+} 
+/* 따로 주기(공통에서 줬기때문에 겹치는 현상이 발생하기때문에,) */
+#wrap #join_frm .contents .info dd #user_mail {width:190px; float:left;} 
+#wrap #join_frm .contents .info dd span {
+    float:left;
+    margin-left:2.5px;
+    transform:translateY(10px);
+}
+#wrap #join_frm .contents .info dd select[name*=adr] {
+    float:right;
+    border-radius:3px;
+    border:1px solid #bbb;
+    height:36px;
+    padding-left:10px;
+    width:190px;
+    background:#fff url(../images/arrow_drop_down.png) no-repeat 95% center;
+}
+#wrap #join_frm .contents .info dd select[name*=abr] option {}
+#wrap #join_frm .contents .info dd #email_certified_btn {
+    border-radius:3px;
+    border:1px solid #ddd;
+    background-color:#f5f5f5;
+    width:100%; padding:10px 0; text-align:center;
+}
+/*---------------------------------------------2.비밀번호 */
+#wrap #join_frm .contents .info dd #user_pw {}
+/* ---------------------------------------------3.비밀번호확인 */
+#wrap #join_frm .contents .info dd #user_pw_re {}
+/* ---------------------------------------------4.닉네임 */
+#wrap #join_frm .contents .info dd #user_nick {}
+/* -------------------------------------------가입약관 */
+#wrap #join_frm .law {margin:22px 0 0;}
+#wrap #join_frm .law dl {}
+#wrap #join_frm .law dl dt {margin:0 0 10px;}
+#wrap #join_frm .law dl dd {
+    border-radius:3px;
+    border:1px solid #ddd;
+    padding:10px; 
+}
+#wrap #join_frm .law dl dd ul {}
+#wrap #join_frm .law dl dd ul li {padding:10px 0;}
+/* -------------------------------------전체동의 1행 */
+#wrap #join_frm .law dl dd ul li:first-child {
+    border-bottom:1px solid #aaa;
+} 
+#wrap #join_frm .law dl dd ul li:first-child #all {}
+#wrap #join_frm .law dl dd ul li:first-child label {font-weight:600;}
+#wrap #join_frm .law dl dd ul li:first-child label em {font-size:0.875rem; color:#777;}
+/* ---------------------------------------개별동의 2~6행 통함 */
+#wrap #join_frm .law dl dd ul li input[name*=agree]{display:none;}
+#wrap #join_frm .law dl dd ul li input[name*=agree]:checked + label {
+    background-image:url(../images/check_box_y.png);
+}
+#wrap #join_frm .law dl dd ul li label{
+    background-image:url(../images/check_box_n.png);
+    background-repeat:no-repeat;
+    /* 이미지의 위치를 맞추기 위해서 행간을 주고, label은 인라인 속성이라서 display를 주면 원하는 크기로 보인다. */
+    padding-left:34px; line-height:24px; display:inline-block;
+}
+#wrap #join_frm .law dl dd ul li label em {font-size:0.75rem; color:#777;}
+#wrap #join_frm .law dl dd ul li label .essential {font-size:0.813rem; color:#3292FF;}
+#wrap #join_frm .law dl dd ul li label .essential {}
+#wrap #join_frm .law dl dd ul li label .choice {}
+#wrap #join_frm .law dl dd ul li .more {float:right;}
+#wrap #join_frm .law dl dd ul li .more img {}
+/* -----------------------------------------------가입버튼 */
+#wrap #join_frm #join_btn {margin:22px 0;}
+#wrap #join_frm > p {text-align:center; font-size:0.875rem;}
+#wrap #join_frm > p a {text-decoration:underline; font-weight:600;}
