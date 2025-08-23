@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keyword" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>musesscore | login</title>
+    <link rel="shortcut icon" icon href="favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" as="style" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard-dynamic-subset.min.css" />
+    <link rel="stylesheet" href="./styles/reset.css">
+    <link rel="stylesheet" href="./styles/login.css">
+</head>
+<body>
+    <div id="wrap">
+        <h1>Log in to Musescore</h1>
+        <p>Don't have an account?</p>
+        <p class="sign_link"><a href="#">Sign Up</a></p>
+            <div class="sns">
+                <a class="google" href="#"><img src="./images/google-login.png" alt="구글 아이디로 회원가입">Continue with Google</a>
+                <a class="fb" href="#"><img src="./images/fb-login.svg" alt="페이스북 아이디로 회원가입"></a>
+                <a class="apple" href="#"><img src="./images/apple-login.svg" alt="애플 아이디로 회원가입"></a>
+            </div>
+            <div class="line">
+                <span>or</span>
+            </div>
+            <form action="#" method="post" id="join_frm">
+                <dl class="email_group">
+                    <dt>Email or username</dt>
+                    <dd><input type="text" name="user_id" id="user_id" class="in_pw"></dd>
+                </dl>
+                <p class="error">Please enter your email</p>
+                <dl class="pw_group">
+                    <dt>Password</dt>
+                    <dd><input type="password" name="user_pw" id="user_pw" class="in_pw"></dd>
+                    <dd><a href="#">Forgot your password?</a></dd>
+                </dl>
+            <button type="submit" id="login_btn">Log in</button>
+            </form>
+    </div>
+</body>
+</html>

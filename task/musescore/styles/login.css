@@ -1,0 +1,84 @@
+#wrap {
+    text-align:center;
+    width:320px; height:auto;
+    background-color:#fff;
+    margin:0 auto;}
+/* ------------------------------------------------------메인 */
+#wrap h1 {
+    font-size:2rem; font-weight:700;
+    padding:5px 0;
+}
+#wrap > *:not(h1) {margin-bottom:20px;}
+#wrap p {
+    display:inline-block;
+    font-size:0.875rem;
+}
+#wrap .sign_link a {
+    font-size:0.875rem; color:#6B5DFE;
+}
+/* ------------------------------------------------------sns */
+#wrap .sns {}
+#wrap .sns a {margin:10px 0;}
+#wrap .sns a img {}
+#wrap .sns .google {
+    display:inline-block; align-items:center;
+    border:1px solid #aaa; border-radius:30px;
+    background:#6B5DFE; font-size:1.063rem; color:#fff;
+    padding:5px;
+}
+#wrap .sns .google img {
+    display:inline-block;
+    width:32px; height:32px;
+    background-color:#fff;
+    border-radius:30px;
+    vertical-align:middle;
+}
+#wrap .sns .fb {margin:0 8px;}
+#wrap .sns .fb,
+#wrap .sns .apple {
+    border: 1px solid #aaa; border-radius:30px;
+    vertical-align:middle; display:inline-block;
+    
+
+}
+#wrap .sns .fb,
+#wrap .sns .apple img {width:32px; padding:4px;}
+/* -----------------------------------------------------구분선 */
+#wrap .line {margin:15px 0;}
+#wrap .line span {font-size:0.875rem; padding:10px;}
+#wrap .line span::before,
+#wrap .line span::after {
+content: "";
+display:inline-block;
+width: 100%;
+height: 1px;
+background-color:pink;
+}
+#wrap .line span::after {margin-left:12px;}
+#wrap .line span::after {margin-right:12px;}
+/* -----------------------------------------------------이메일 */
+#wrap #join_frm {text-align:left;}
+#wrap #join_frm .email_group {margin-bottom:20px;}
+#wrap #join_frm dt {
+    font-size:0.875rem; font-weight:600; margin-bottom:10px;
+}
+#wrap #join_frm dd .in_pw {
+    border:1px solid #aaa;
+    width: 100%; padding:0 0 10px;
+}
+#wrap #join_frm .in_pw {}
+#wrap #join_frm .error {
+    font-size:0.875rem; color:#FF0000;
+    display:none;
+}
+/* ----------------------------------------------------비밀번호 */
+#wrap #join_frm .pw_group {}
+#wrap #join_frm .pw_group dd a {font-size:0.875rem; color:#6B5DFE;}
+#wrap #join_frm #user_pw {}
+/* -----------------------------------------------------버튼 */
+#wrap #login_btn {
+    border:1px solid #aaa; border-radius:30px;
+    background-color:#ddd;
+    text-align:center; width:100%;
+    padding:10px; margin-top:15px;
+}
