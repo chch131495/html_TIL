@@ -60,11 +60,11 @@ background-color:pink;
 #wrap #join_frm {text-align:left;}
 #wrap #join_frm .email_group {margin-bottom:20px;}
 #wrap #join_frm dt {
-    font-size:0.875rem; font-weight:600; margin-bottom:10px;
+    font-size:0.875rem; font-weight:500; margin-bottom:5px;
 }
 #wrap #join_frm dd .in_pw {
     border:1px solid #aaa;
-    width: 100%; padding:0 0 10px;
+    width: 100%; padding:0 0 20px;
 }
 #wrap #join_frm .in_pw {}
 #wrap #join_frm .error {
@@ -73,12 +73,14 @@ background-color:pink;
 }
 /* ----------------------------------------------------비밀번호 */
 #wrap #join_frm .pw_group {}
+#wrap #join_frm .pw_group dd {}
 #wrap #join_frm .pw_group dd a {font-size:0.875rem; color:#6B5DFE;}
 #wrap #join_frm #user_pw {}
 /* -----------------------------------------------------버튼 */
 #wrap #login_btn {
-    border:1px solid #aaa; border-radius:30px;
+    border-radius:30px;
     background-color:#ddd;
+    color:#aaa;
     text-align:center; width:100%;
     padding:10px; margin-top:15px;
 }
