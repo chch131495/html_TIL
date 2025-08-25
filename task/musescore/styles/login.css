@@ -71,6 +71,8 @@ background-color:pink;
 /* ----------------------------------------------------비밀번호 */
 #wrap #join_frm .pw_group {}
 #wrap #join_frm .pw_group dd {}
+#wrap #join_frm .pw_group dt {float:left;}
+#wrap #join_frm .pw_group dd:nth-child(2) {float:right;}
 #wrap #join_frm .pw_group dd a {font-size:0.875rem; color:#6B5DFE;}
 #wrap #join_frm #user_pw {}
 /* -----------------------------------------------------버튼 */

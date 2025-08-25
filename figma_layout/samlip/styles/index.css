@@ -1,17 +1,45 @@
 /* index 파일에만 존재하는 디자인 */
 #wrap main .visual_bnr_wrap {}
-#wrap main .visual_bnr_wrap section {} /* 공통 */
-#wrap main .visual_bnr_wrap section h2 {} /* 공통 */
-#wrap main .visual_bnr_wrap section p {} /* 공통 */
-#wrap main .visual_bnr_wrap .bnr1 {} 
-#wrap main .visual_bnr_wrap .bnr1 h2 {}
-#wrap main .visual_bnr_wrap .bnr1 p {}
-#wrap main .visual_bnr_wrap .bnr2 {}
-#wrap main .visual_bnr_wrap .bnr2 h2 {}
+#wrap main .visual_bnr_wrap section {
+    background-size:cover;/* 배경이 꽉 채워서 보이게 하는 속성 */
+    height:800px;
+} /* 공통 */
+#wrap main .visual_bnr_wrap section h2 {
+    letter-spacing:var(--letter-minys2);
+    line-height:var(--line-title);
+    font-weight:var(--weight--bolod);
+    font-size:var(--text-title70);} /* 공통 */
+#wrap main .visual_bnr_wrap section p {
+    font-size:var(--text-contents21);
+    line-height:var(--line-contents);
+    letter-spacing:var(--letter-minys2);
+    color:var(--color-gray4);
+} /* 공통 */
+#wrap main .visual_bnr_wrap .bnr1 {
+    background-image:url(../images/row1_bnr1.jpg);
+} 
+#wrap main .visual_bnr_wrap .bnr1 h2 {
+    color:var(--color-white);
+}
+#wrap main .visual_bnr_wrap .bnr1 p {color:var(--color-white)}
+#wrap main .visual_bnr_wrap .bnr2 {
+    background-image:url(../images/row1_bnr2.jpg);
+}
+#wrap main .visual_bnr_wrap .bnr2 h2 {
+    color:var(--color-title_brown);
+}
 #wrap main .visual_bnr_wrap .bnr2 p {}
-#wrap main .visual_bnr_wrap .bnr3 {}
-#wrap main .visual_bnr_wrap .bnr3 h2 {}
+#wrap main .visual_bnr_wrap .bnr3 {
+    background-image:url(../images/row1_bnr3.jpg)
+}
+#wrap main .visual_bnr_wrap .bnr3 h2 {
+    color:var(--color-title_indigo);
+}
 #wrap main .visual_bnr_wrap .bnr3 p {}
-#wrap main .visual_bnr_wrap .bnr4 {}
-#wrap main .visual_bnr_wrap .bnr4 h2 {}
+#wrap main .visual_bnr_wrap .bnr4 {
+    background-image:url(../images/row1_bnr4.jpg);
+}
+#wrap main .visual_bnr_wrap .bnr4 h2 {
+    color:var(--color-title_coral);
+}
 #wrap main .visual_bnr_wrap .bnr4 p {}
