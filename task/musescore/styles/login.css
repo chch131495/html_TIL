@@ -2,16 +2,17 @@
     text-align:center;
     width:320px; height:auto;
     background-color:#fff;
-    margin:0 auto;}
+    margin:15px auto;}
 /* ------------------------------------------------------메인 */
 #wrap h1 {
     font-size:2rem; font-weight:700;
-    padding:5px 0;
+    margin-top:10px;
 }
-#wrap > *:not(h1) {margin-bottom:20px;}
+#wrap > *:not(h1) {margin-bottom:15px;}
 #wrap p {
     display:inline-block;
     font-size:0.875rem;
+    margin-top:8px;
 }
 #wrap .sign_link a {
     font-size:0.875rem; color:#6B5DFE;
@@ -37,12 +38,9 @@
 #wrap .sns .fb,
 #wrap .sns .apple {
     border: 1px solid #aaa; border-radius:30px;
-    vertical-align:middle; display:inline-block;
-    
-
-}
+    vertical-align:middle; display:inline-block;}
 #wrap .sns .fb,
-#wrap .sns .apple img {width:32px; padding:4px;}
+#wrap .sns .apple img {padding:5px;}
 /* -----------------------------------------------------구분선 */
 #wrap .line {margin:15px 0;}
 #wrap .line span {font-size:0.875rem; padding:10px;}
@@ -58,15 +56,14 @@ background-color:pink;
 #wrap .line span::after {margin-right:12px;}
 /* -----------------------------------------------------이메일 */
 #wrap #join_frm {text-align:left;}
-#wrap #join_frm .email_group {margin-bottom:20px;}
+#wrap #join_frm .email_group {margin-bottom:15px;}
 #wrap #join_frm dt {
-    font-size:0.875rem; font-weight:500; margin-bottom:5px;
-}
+    font-size:0.875rem; font-weight:500; margin-bottom:10px;}
 #wrap #join_frm dd .in_pw {
     border:1px solid #aaa;
-    width: 100%; padding:0 0 20px;
+    width: 100%;
 }
-#wrap #join_frm .in_pw {}
+#wrap #join_frm .in_pw {height:50px;}
 #wrap #join_frm .error {
     font-size:0.875rem; color:#FF0000;
     display:none;
