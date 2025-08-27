@@ -1,4 +1,36 @@
 /* index 파일에만 존재하는 디자인 */
+/* 고정 페이지 위치 */
+#wrap main .main_pst_link {
+    /* z-index는 순서이기때문에 단위를 주면 안됨!!!! */
+    position:fixed; z-index:80;
+    right:80px; top:344px;
+    display:flex;
+    flex-flow:column nowrap;
+    align-items:flex-end;
+    gap:20px;
+}
+#wrap main .main_pst_link a {
+    display:flex; flex-flow:row nowrap; gap:10px;
+}
+#wrap main .main_pst_link a span {}
+#wrap main .main_pst_link .name {font-size:var(--text-sub10); display:none;}
+#wrap main .main_pst_link .circle {
+    display:block; width:10px; height:10px;
+    background:var(--color-white); border-radius:50%;
+    /* box-shadow: x값 y값 blur값 색상 */
+    box-shadow:0 0 4px rgba(0, 0, 0, 0.25);
+}
+/* ----------------------------------- 첫번째 circle 활성화 디자인 */
+#wrap main .main_pst_link a:first-child .circle {background:var(--color-point);}
+/*----------------------------------- 마우스 활성화 디자인 */
+/* ----------------------------------- 1. 글자 숨기기 */
+/* #wrap main .main_pst_link a:hover .name {display:none} */
+/*-------------------------------------2. circle 마우스 올리면(a)  */
+#wrap main .main_pst_link a:hover .circle {background:#000;}
+#wrap main .main_pst_link a:hover .name {display:inline-block;}
+/*-------------------------------------2-1. circle 검은색 변경 */
+/*-------------------------------------- 2-1. 글자보이기 */
+/* --------------------------------1행 시작 */
 #wrap main .visual_wrap {
     width:100vw; overflow:hidden;
 }
@@ -22,7 +54,6 @@
     font-size:var(--text-title70); /* 공통 */
     position:absolute; left:80px; bottom:134px;
 }
-    
 #wrap main .visual_wrap .visual_bnr_wrap section p {
     font-size:var(--text-contents21);
     line-height:var(--line-contents);
@@ -58,3 +89,74 @@
     color:var(--color-title_coral);
 }
 #wrap main .visual_wrap .visual_bnr_wrap .bnr4 p {}
+/* ----------------------------------------------------------1행&2행 좌우 버튼 */
+#wrap main .visual_wrap .prev_next_wrap, 
+#wrap main .news_notice_wrap .prev_next_wrap {
+    display:flex; flex:row nowrap;
+    justify-content:center;
+    padding:40px 0; gap:24px;
+}
+#wrap main .visual_wrap .prev_next_wrap a, 
+#wrap main .news_notice_wrap .prev_next_wrap a {}
+#wrap main .visual_wrap .prev_next_wrap img, 
+#wrap main .news_notice_wrap .prev_next_wrap img {}
+#wrap main .visual_wrap .prev_next_wrap .next img, 
+#wrap main .news_notice_wrap .prev_next_wrap .next img {
+    transform:scaleX(-1); /* 좌우 반전을 줄려면 크기를 반전한다고 생각! */
+}
+#wrap main .visual_wrap .prev_next_wrap .prev, 
+#wrap main .news_notice_wrap .prev_next_wrap .prev {}
+/* ----------------------------------------------------------2행 시작 */
+#wrap main .news_notice_wrap {
+    padding:50px;
+    /* text-align:center; -> 인라인 요소만 가운데 정렬*/
+    display:flex; flex-flow:column nowrap; align-items:center; /* 모든 태그가 다 가운데 정렬 */
+}
+#wrap main .news_notice_wrap > * {}
+#wrap main .news_notice_wrap h2 {
+    font-size:var(--text-sub-menu40);font-weight:var(--weight--bolod);
+    letter-spacing:var(--letter-minus2);
+}
+#wrap main .news_notice_wrap h2+p {
+    line-height:var(--line-contents);
+    margin:20px 0 80px;
+}
+#wrap main .news_notice_wrap .card_wrap {
+    width:var(--width-desktop); overflow:hidden;
+}
+#wrap main .news_notice_wrap .card_all {
+    display:flex; flex-flow:row nowrap; /* 옆으로 배열(8개 카드가 보이게 하는것) */
+    width:max-content; /* 내용 최대값 */
+    gap:62.67px;
+}
+#wrap main .news_notice_wrap .card_all li {
+    width:311px; height:298px;
+    border:1px solid var(--color-grayd);
+    position:relative;
+    background: var(--color-white);
+}
+#wrap main .news_notice_wrap .card_wrap .card_all li:hover {
+    border-color:var(--color-point);
+}
+#wrap main .news_notice_wrap .card_wrap .card_all li a {}
+#wrap main .news_notice_wrap .card_wrap .card_all li a .phtio {}
+#wrap main .news_notice_wrap .card_wrap .card_all li a .phtio img {width:100%;}
+#wrap main .news_notice_wrap .card_wrap .card_all li .date {
+    position:absolute; 
+    left:20px; bottom:9px;
+}
+#wrap main .news_notice_wrap .card_wrap .card_all li a h3 {
+    font-size:var(--text-menu18);
+    line-height:var(--line-contents);
+    padding:20px 20px 0;
+}
+#wrap main .news_notice_wrap .view_all_btn {
+    width:200px; height:48px; margin:23px 0 0;
+    border:1px solid var(--color-gray);
+    /* text-align:center; /* 수평만 센터 */
+    /* line-height:48px; */ 
+    display:flex; flex-flow:row nowrap;
+    justify-content:center; align-items:center; gap:10px;
+}
+#wrap main .news_notice_wrap .view_all_btn img {}
+#wrap main .news_notice_wrap .view_all_btn span {font-size:var(--text-sub14);}

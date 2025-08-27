@@ -6,27 +6,35 @@
 --text-contents21:1.313rem;
 --text-menu18:1.125rem;
 --text-sub12:0.75rem;
+--text-sub10:0.625rem;
+--text-sub14:0.875rem;
+--text-sub-menu40:2.5rem;
 /* 행간 */
 --line-title:0.9;
 --line-contents:1.5;
 /* 자간 */
---letter-minys2:-0.02rem;
+--letter-minus2:-0.02rem;
 /* 굵기 */
 --weight--bolod:700;
 --weight--semibolod:600;
+--weight--medium:500;
 /* 색상(테두리색, 배경색, 글자색) */
 --color-white:#fff;
 --color-gray4:#444;
 --color-gray:#aaa;
+--color-grayd:#ddd;
 --color-title_brown:#642C10;
 --color-title_indigo:#1D356D;
 --color-title_coral:#D43936;
+--color-point:#36b4e5;
 /* 레이아웃 정보 */
 --width-desktop:1440px;
 --margin-desktop-1-r-80:80px;
 }
+/* `scroll-behavior`->스크롤의 동작을 부드럽게 한다 */
+body,html {scroll-behavior:smooth;}
 /* header 포함 공통 */
-#wrap {}
+#wrap {padding-top:92px;}
 #wrap header {
     /* width:100%; 블록의 기본값 생략가능 */
     padding:0 80px;
@@ -35,7 +43,11 @@
     flex-flow:row nowrap; /* 메인축(수평) 줄바꿈안함 */
     justify-content:space-between; /* 메인축 정렬(양쪽끝) */
     align-items:center;/* 교차축(수직) 가운데 */
-    position:relative; /* lnb 부모 크기+위치기준 */
+    /* position:relative; /* lnb 부모 크기+위치기준 */
+    position:fixed; left:0; top:0; /* 좌표쓰기(left, top) */
+    z-index:900; /* 부모의 값이기때문에 크게 값을 줘도 괜찮음 */
+    width:100%; /* fixed or absolute을 사용하게 되면 너비값을 재설정해야한다. */
+    background:var(--color-white);
 }
 #wrap header h1 {}
 #wrap header h1 a {}

@@ -52,10 +52,6 @@
     position:absolute; /* 선 위로 올라가야하기때문에 postiton 준다. */
     top:-18px;
 }
-#wrap .line span::before,
-#wrap .line span::after {}
-#wrap .line span::after {margin-left:12px;}
-#wrap .line span::after {margin-right:12px;}
 /* -----------------------------------------------------이메일 */
 #wrap #join_frm {text-align:left;}
 #wrap #join_frm .email_group {margin-bottom:15px;}
