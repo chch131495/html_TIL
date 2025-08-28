@@ -3,11 +3,14 @@
 /* --대상-용도:반복속성값; */
 /* 글자크기 */
 --text-title70:4.375rem;
+--text-title50:3.125rem;
 --text-contents21:1.313rem;
 --text-menu18:1.125rem;
+--text-sub30:1.875rem;
+--text-sub28:1.75rem;
+--text-sub14:0.875rem;
 --text-sub12:0.75rem;
 --text-sub10:0.625rem;
---text-sub14:0.875rem;
 --text-sub-menu40:2.5rem;
 /* 행간 */
 --line-title:0.9;
@@ -20,6 +23,7 @@
 --weight--medium:500;
 /* 색상(테두리색, 배경색, 글자색) */
 --color-white:#fff;
+--color-white5:#f5f5f5;
 --color-gray4:#444;
 --color-gray:#aaa;
 --color-grayd:#ddd;
@@ -27,8 +31,10 @@
 --color-title_indigo:#1D356D;
 --color-title_coral:#D43936;
 --color-point:#36b4e5;
+--color-point2:#f3c300;
 /* 레이아웃 정보 */
 --width-desktop:1440px;
+--width-desktop-1140:1140px;
 --margin-desktop-1-r-80:80px;
 }
 /* `scroll-behavior`->스크롤의 동작을 부드럽게 한다 */
