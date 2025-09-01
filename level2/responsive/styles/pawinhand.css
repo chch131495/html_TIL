@@ -1,0 +1,88 @@
+/* PC */
+#wrap {}
+#wrap header {
+    box-shadow:0 0 10px rgba(0,0,0,0.25);/*  그림자 생성 */
+}
+#wrap header .header_contents {
+    max-width:1200px; /* max를 앞에 붙이면, 최대값이 1200이고 그 이하는 가변으로 설정->모바일, 태블릿에 따로 w를 설정할 필요가 없음. */
+    height:64px; margin:0 auto;
+    background-color:yellow;
+    display:flex; flex-flow:row nowrap;
+    justify-content:space-between; align-items:center;
+}
+#wrap header .header_contents h1 {}
+#wrap header .header_contents h1 a {}
+#wrap header .header_contents > nav {}
+#wrap header .header_contents > nav a {margin-left:20px;}
+#wrap header .header_contents > nav a:hover {font-weight:700;}/* 마우스 올리면 글자 굵기 변환 */
+#wrap header .header_contents .m_nav {display:none;}/* 모바일 영역->미리 숨기기(부모에다가) */
+#wrap header .header_contents .m_nav > a {}
+#wrap header .header_contents .m_nav > nav {}
+#wrap header .header_contents .m_nav > nav a {}
+/* ---------------------------------------------------main */
+#wrap main {}
+/* ---------------------------------------------------main 1행 광고*/
+#wrap main #slide_wrap {
+    max-width:1200px; overflow:hidden;/* hidden->넘친 값을 숨기기 */
+    margin:0 auto;
+    position:relative;
+}
+#wrap main #slide_wrap .slide_container {
+    display:flex; width:max-content;
+    justify-content:center; align-items:center;
+}
+#wrap main #slide_wrap .slide_container .slide {
+    max-width:1200px; /* 최대값은 1200px이고 나머지 값은 가변으로 설정 */
+    width:1200px; /* 옆으로 나열될대 하나의 값을 정해준 것. */
+    height:650px;
+    background-size:cover;
+    background-position:center;
+}
+#wrap main #slide_wrap .slide_container .slide1 {background-image:url(https://i.pinimg.com/736x/cf/3e/e9/cf3ee99eec3848451bdd2dcd095a2893.jpg);}
+#wrap main #slide_wrap .slide_container .slide2 {background-image:url(https://i.pinimg.com/736x/b7/66/a6/b766a656aa330b878e9aed5ee635f098.jpg);}
+#wrap main #slide_wrap .slide_container .slide3 {background-image:url(https://i.pinimg.com/736x/39/70/f1/3970f14612bfb87bba8d2b6a4a4f78e9.jpg);}
+#wrap main #slide_wrap .slide_container .slide4 {background-image:url(https://i.pinimg.com/736x/1a/1a/af/1a1aaf9b636794b997cf2a3237cdd160.jpg);}
+#wrap main #slide_wrap .slide_container .slide5 {background-image:url(https://i.pinimg.com/736x/7b/53/b9/7b53b9b2aaabdaf6a4df2ef0c60ac42c.jpg);}
+#wrap main #slide_wrap .slide_container .slide6 {background-image:url(https://i.pinimg.com/736x/b4/81/b9/b481b9c775d164cee462b095d9b81582.jpg);}
+#wrap main #slide_wrap .slide_container .slide1 > .slide2 {display:none;}
+#wrap main #slide_wrap .slide_container .active {}
+#wrap main #slide_wrap .prev {left:10px;}
+#wrap main #slide_wrap .next {right:10px;}
+#wrap main #slide_wrap .prev, #wrap main #slide_wrap .next {
+    position:absolute; top:50%;/* 부모의 값에서 절반으로 오라고 하는것 */
+}
+#wrap main #slide_wrap .pagenation {
+    position:absolute; bottom:50px; left:0;
+    width:100%; text-align:center;
+}
+#wrap main #slide_wrap .pagenation span {}
+#wrap main #slide_wrap .pagenation span.active {}
+/* ---------------------------------------------------------------------------2행 소개 */
+#wrap main .info {
+    background:pink;
+    max-width:1200px; margin:0 auto;
+    display:flex; flex-flow:row nowrap;
+    justify-content:space-between; align-items:center;
+    /* padding:50px 0;-> padding  값으로 인해서 덜컹거리는게 생김-> 높이를 설정해주면 덜컹거리는게 없어짐 */ 
+    height:270px;
+}
+#wrap main .info a {
+    width:100px; height:100px;
+    border:1px solid #000; border-radius:50%; line-height:100px;
+    text-align:center;
+}
+#wrap main .info a:hover {
+    width:170px; height:170px; line-height:170px;
+    
+}
+/* -------------------------------------------------------------3행 입양문의 */
+#wrap main .inquiry {}
+#wrap main .inquiry h2 {}
+#wrap main .inquiry #adoption_frm {}
+#wrap main .inquiry #adoption_frm input[type=text], /* 속성선택자 */
+#wrap main .inquiry #adoption_frm input[type=number], 
+#wrap main .inquiry #adoption_frm textarea #conten {
+    background: #eee; width:100%;
+}
+#wrap main .inquiry #adoption_frm textarea #content {} /* 태그를 함께 작성해줘야지 구분하기 쉽다. */
+#wrap main .inquiry #adoption_frm #inquiry_btn {} /* 태그를 사용하지않는 이유-> btn의 약자를 사용하기때문에 */
