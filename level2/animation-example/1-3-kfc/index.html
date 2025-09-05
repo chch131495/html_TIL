@@ -16,17 +16,39 @@
             background:#fff; border-radius:50px; text-align:center; padding:20px 0;
             display:inline-block; margin-top:50px; font-weight:600;
             width:200px; color:#000;
+            /* transition:width 0.3s, color 0.3s, box-shadow 0.5s; -> 속성값이 다르면 ,를 사용*/
+            transition:all 0.3s;
+            /* 애니메이션 시간 통일 -> 속성이 여러개지만 애니메이션 시간을 통일하고싶으면 -> all를 사용 (transition을 여러번 사용하면 안됨 -> 마지막만 적용이 됨*/
+        }
+        main .txt #order:hover {
+            color:#da1e27;
+            box-shadow:0 0 20px rgba(255,255,255,0.7);
+            /* transform:skewX(1.2deg); -> 옆으로 글자와 함께 커짐*/
+            width:250px;
         }
         #sns {position:absolute; left:0; bottom:100px;}
         #sns a {
             display:inline-block; width:40px; margin:0 10px;
             position:relative; top:0;
+            transition:transform 0.3s;
+            transform-origin:top;
         }
-        #sns a img {width:100%;}
+        #sns a:hover img {
+            transform:translateY(-50px);
+        }
+        #sns a img {width:100%; transition:0 0.3s;}
         #dynamic #btn {display:flex; position:absolute; right:0; bottom:100px;}
         #dynamic #btn a {margin:0 5px;}
         #dynamic #btn a#prev {}
-        #dynamic #btn a#next {}
+        #dynamic #btn a#next {transform:scaleX(-1);}
+        #dynamic #btn:hover + #img .meun1 {display:none;}
+        #dynamic #btn:hover + #img .meun3 {display:inline-block;}
+        #dynamic #img {position:relative; width:712px;}
+        #dynamic #img img {}
+        #dynamic #img .meun1 {}
+        #dynamic #img .meun3 {
+            position:absolute; left:0; top:0; display:none;
+        }
     </style>
     <script>
         window.onload=function(){
@@ -50,12 +72,13 @@
                 <a href="#"><img src="images/instagram.png" alt=""></a>
             </div>
             <div id="dynamic">
-                <div id="img">
-                    <img src="images/menu1.png" alt="" id="big">
-                </div>
                 <div id="btn">
                     <a href="#" id="prev"><img src="images/prev_next.png" alt=""></a>
                     <a href="#" id="next"><img src="images/prev_next.png" alt=""></a>
+                </div>
+                <div id="img">
+                    <img src="images/menu1.png" alt="" id="big" class="meun1">
+                    <img src="images/menu3.png" alt="" class="meun3">
                 </div>
             </div>
         </main>

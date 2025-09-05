@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>transfom 공부</title>
+    <link rel="alternate" href="rss.xml" type="application/rss+xml" title="RSS">
+    <style>
+        main {background:pink; max-width:1000px; margin:100px auto;}
+        main .coffee {width:200px; display:block; border:1px solid red;} /* 부모의 크기 */
+        main .coffee img {width:100%;/* 부모의 크기를 따라가기 위해서 %로 작성 */}
+        main .c1 {transition:transform 0.3s;}
+        main .c1:hover {
+            /* transform:속성(값) 속성(값) 속성(값); */
+            transform:scale(1.2);/* 120%비율이 준 것 */
+        }
+        main .c2 {
+            transition:transform 0.3s;
+            transform-origin:right top;/* 중심축을 이동할때에는 hover에 사용하는 것이 아니라 원래 선택자에 사용해야함 */
+        }
+        main .c2:hover {
+            transform:rotate(-20deg) scale(1.1);
+        }
+        main .c3 {
+            transition:transform 0.2s;
+            transform-origin:left bottom;
+        }
+        main .c3:hover {
+            transform:skewX(10deg) rotate(5deg) scale(1.1);
+        }
+        main .c4 {
+            transition:transform 0.3s;
+            
+        }
+        main p:hover .c4 {/* 가까운 부모에게 hover를 작성해야지 크기를 크게 줘도 덜컹거리는게 사라짐 */
+            transform:translate(200px, 10px) rotate(5deg) scale(0.9) skewX(5deg); /* 200px->x축 10px->y축 */
+        }
+    </style>
+</head>
+<body>
+    <main>
+        <!-- a태그에 class를 준것은 형제이기때문 (img은 외동이기때문) -->
+        <a href="#" class="coffee c1"><img src="./coffee_images/starbucks1.png" alt=""></a>
+        <a href="#" class="coffee c2"><img src="./coffee_images/starbucks1.png" alt=""></a>
+        <a href="#" class="coffee c3"><img src="./coffee_images/starbucks1.png" alt=""></a>
+        <p><a href="#" class="coffee c4"><img src="./coffee_images/starbucks1.png" alt=""></a></p>
+    </main>
+</body>
+</html>
