@@ -7,20 +7,35 @@
     <link rel="stylesheet" href="../1-0-prospecs/reset.css">
     <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
     <style>
-        body {background:#000;}
+        body {background:#000; overflow:hidden;}
         main  {width:100%; height:100vh; display:flex; flex-flow:column nowrap; justify-content: center; align-items: center;}
-        body .images {filter:brightness(0) invert(1); width:10%;}
-        body .images .icon {}
-        body .images .star1 {}
-        body .images .star2 {}
-        body .images .star3 {}
-        body .images .star4 {}
-        body .images .star5 {}
-        main p {text-align:center; filter:brightness(0) invert(1);}
-        main p img {width:15%;}
-        main p:nth-child(1) {}
+        .images {
+            filter:brightness(0) invert(1); 
+            width:100%; position:relative;
+        }
+        .images .icon {
+            display:block; position:absolute;
+            width:100%; height:100vh; z-index:9;
+        }
+        .images .star1 {top:; left:; animation:sparkle 1s infinite alternate;}
+        .images .star2 {top:; left:; animation:sparkle 1s infinite alternate;}
+        .images .star3 {top:; left:; animation:sparkle 1s infinite alternate;}
+        .images .star4 {top:; left:; animation:sparkle 1s infinite alternate;}
+        .images .star5 {top:; left:; animation:sparkle 1s infinite alternate;}
+        .images .star6 {top:; left:; animation:sparkle 1s infinite alternate;}
+        main {position:relative; z-index:10;}
+        main p {
+            text-align:center;
+            filter:brightness(0) invert(1)
+            drop-shadow(0 0 10px rgba(225,255,255,0.8))
+            drop-shadow(0 0 20px rgba(225,255,255,0.6))
+            drop-shadow(0 0 40px rgba(225,255,255,0.4));
+        }
+        main p img {width:15%; transform-origin:center top;}
+        main p:nth-child(1) img {animation:up 4s linear infinite;}
+        main p:last-child img {animation:down 4s linear infinite;}
         main h1 {
-            margin:0 auto;
+            margin:30px auto;
             font-weight:700; font-size:5rem; text-align:center;
             background:linear-gradient(to right, #7A73D1, #FDB7EA, #4D55CC, #7A73D1);
             -webkit-background-clip:text;
@@ -31,15 +46,17 @@
             animation:bg_gradient 10s linear infinite;
         }
         main h2 {
-            margin-top:50px;
+            margin-bottom:30px;
             font-family: 'Black Ops One';
-            text-shadow:0 0 20px rgba(255,255,255,0.2);
+            text-shadow:0 0 10px rgba(255,255,255,0.2),
+            0 0 20px rgba(255,255,255,0.5);
             font-size:10rem; text-align: center; font-weight:700; 
             background: url(https://i.pinimg.com/1200x/84/9f/c8/849fc8ad5947ca38a1d0a49da6f22a0e.jpg) center / cover;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             color: transparent;
+            position:relative; z-index:1;
         }
         main p:nth-last-child(2) {}
         footer {text-align:end;}
@@ -48,6 +65,21 @@
         @keyframes bg_gradient {
             0% {background-position-x:0;}
             100% {background-position-x:400%;}
+        }
+        @keyframes up {
+            0% {transform:translateY(0);}
+            100% {transform:translateY(40px);}
+        }
+        @keyframes down {
+            0% {transform:translateY(0);}
+            100% {transform:translateY(-50px);}
+        }
+        @keyframes sparkle {
+            0% {transform: translate(0, 0); opacity:1;}
+            25% {transform: translate(5px, -5px); opacity: 2;}
+            50% {transform: translate(20px, -20px); opacity: 0.5;}
+            75% {transform: translate(100px, -100px); opacity: 1;}
+            100% {transform: translate(0); opacity: 2; }
         }
     </style>
 </head>
