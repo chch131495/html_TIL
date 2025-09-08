@@ -6,11 +6,11 @@ header {
     align-items:center; z-index:999;
     position:fixed; left:50%; top:0; margin-left:-700px;
 }
-header nav a {margin:0 7px;}
+header nav a {margin:0 7px; color:#fff;}
 header .right a {
     position:relative; padding:5px 5px 5px 27px;
     border:1px dashed rgba(255,255,255,0.6); 
-    font-size:0.875rem; border-radius:3px;
+    font-size:0.875rem; border-radius:3px; color:#fff;
 }
 header .right a::before {
     content:''; display:block;
@@ -28,7 +28,18 @@ main {
     margin: 0 auto;
     top: 80px;
     text-align: center;
+    position:relative;
 }
+main::before, main::after {
+    background:linear-gradient(90deg, rgb(9,13,43), transparent);
+    content:''; display:block; width:20%; height:100%;
+    position:absolute; top:0; z-index:500;
+}
+main::before {left:0;}
+main::after {
+    right:0; transform:scaleX(-1);/* 좌우반전을 위해서 transform을 사용 */
+}
+main > section, main > div {position:relative; z-index:400;}
 main > * {max-width:1400px; margin:0 auto;}
 /* 중첩순서 처리 배경(10) 그라디언트(20) 나머지(30) */
 main .bg_wrap {position:absolute; z-index:10;}
@@ -37,17 +48,22 @@ main .txt, main .car_list, main .car, main .scroll {
 }
 /* 메인배경 */
 main .bg_wrap .bg {width:1400px; margin:0 auto;}
-main .bg_wrap .bg1 {
+main .bg_wrap .bg1 {/* 구름 */
     height:100px; 
-    background:url(../images/bg_cloud.png) repeat-x;
+    background:url(../images/bg_cloud.png) repeat-x;/* 끈김없이 가기 위해서 옆으로 x축으로 준것(사이즈를 줄 필요가없음) */
+    animation:bg 100s linear infinite;
 }
-main .bg_wrap .bg2 {
+main .bg_wrap .bg2 {/* 먼구름 */
     height:200px; 
     background:url(../images/bg_city1.png) repeat-x;
+    background-position:0 0;/* 초기값 */
+    animation:bg 30s infinite;
 }
-main .bg_wrap .bg3 {
+main .bg_wrap .bg3 {/* 가까운 건물 */
     height:100px; position:relative; top:-96px;
     background:url(../images/bg_city2.png) repeat-x;
+    background-position:0 0;
+    animation:bg 15s infinite;
 }
 /* 메인제목 */
 main .txt {}
@@ -60,4 +76,17 @@ main .car #left_tire, main .car #right_tire {
 }
 main .car #left_tire {left:102px;}
 main .car #right_tire {right:91px;}
-
+main .car img[id$=tire] {animation:move 1s linear infinite;}
+main .scroll {animation:topbtm 2s linear alternate infinite;}
+@keyframes bg {
+    0% {background-position-x:0;}
+    100% {background-position-x:500%;}
+}
+@keyframes topbtm {
+    0% {transform:translateY(0);}
+    100% {transform:translateY(-50px);}
+}
+@keyframes move {
+    0% {transform:rotate(0);}
+    100% {transform:rotate(360deg);}
+}

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>intro</title>
+    <link rel="stylesheet" href="../1-0-prospecs/reset.css">
+    <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <style>
+        body {background:#000;}
+        main  {width:100%; height:100vh; display:flex; flex-flow:column nowrap; justify-content: center; align-items: center;}
+        body .images {filter:brightness(0) invert(1); width:10%;}
+        body .images .icon {}
+        body .images .star1 {}
+        body .images .star2 {}
+        body .images .star3 {}
+        body .images .star4 {}
+        body .images .star5 {}
+        main p {text-align:center; filter:brightness(0) invert(1);}
+        main p img {width:15%;}
+        main p:nth-child(1) {}
+        main h1 {
+            margin:0 auto;
+            font-weight:700; font-size:5rem; text-align:center;
+            background:linear-gradient(to right, #7A73D1, #FDB7EA, #4D55CC, #7A73D1);
+            -webkit-background-clip:text;
+            -webkit-text-fill-color:transparent;
+            background-clip: text;
+            color:transparent;
+            background-size:400%;
+            animation:bg_gradient 10s linear infinite;
+        }
+        main h2 {
+            margin-top:50px;
+            font-family: 'Black Ops One';
+            text-shadow:0 0 20px rgba(255,255,255,0.2);
+            font-size:10rem; text-align: center; font-weight:700; 
+            background: url(https://i.pinimg.com/1200x/84/9f/c8/849fc8ad5947ca38a1d0a49da6f22a0e.jpg) center / cover;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+        main p:nth-last-child(2) {}
+        footer {text-align:end;}
+        footer img {width:24px; height:24px;}
+        footer img:nth-child(1){filter:brightness(0) invert(1);}
+        @keyframes bg_gradient {
+            0% {background-position-x:0;}
+            100% {background-position-x:400%;}
+        }
+    </style>
+</head>
+<body>
+    <div class="images">
+        <span class="icon star1"><img src="https://cdn-icons-png.flaticon.com/128/8369/8369316.png" alt=""></span>
+        <span class="icon star2"><img src="https://cdn-icons-png.flaticon.com/128/8369/8369316.png" alt=""></span>
+        <span class="icon star3"><img src="https://cdn-icons-png.flaticon.com/128/8369/8369316.png" alt=""></span>
+        <span class="icon star4"><img src="https://cdn-icons-png.flaticon.com/128/8369/8369316.png" alt=""></span>
+        <span class="icon star5"><img src="https://cdn-icons-png.flaticon.com/128/8369/8369316.png" alt=""></span>
+        <span class="icon star6"><img src="https://cdn-icons-png.flaticon.com/128/8369/8369316.png" alt=""></span>
+    </div>
+    <main>
+        <p><img src="https://cdn-icons-png.flaticon.com/128/105/105212.png" alt=""></p>
+        <h1>CREATIVE</h1>
+        <h2>WORKS</h2>
+        <P><img src="https://cdn-icons-png.flaticon.com/128/105/105212.png" alt=""></P>
+    </main>
+    <footer>
+        <img src="./images/git.png" alt="">
+        <img src="./images/notion.png" alt="">
+    </footer>
+</body>
+</html>

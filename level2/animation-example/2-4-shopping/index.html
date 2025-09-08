@@ -20,10 +20,18 @@
         main section a {
             width:24.5%;
             display:flex; justify-content:space-between;
-            flex-flow:column wrap;
+            flex-flow:column wrap; 
         }
-        main section a .img img {width:100%; border-radius:3px;}
-        main section a:hover .img img {}
+        main section a .img {/* 기본너비:100%;->부모한테 flex가 들어있어서 자식이 인라인여도 크기가 블록처럼 100% h:max-content;(내용만큼인식(img태그가)) */
+            overflow:hidden;/* 이미지가 넘어가면 숨기는 속성(안보이게) */
+            height:294px;/* 개발자도구확인(이미지크기->고정으로 적용) */
+        }
+        main section a .img img {
+            width:100%; border-radius:3px;
+            transform-origin:center top; /* 중심축을 위쪽으로 이동하면 고정이 된다.(고정이 된 것은 거길로 위치가 이동된것) */
+            transition:transform 0.3s;
+        }
+        main section a:hover .img img {transform:scale(1.2);}
         /* 상품 내용 디자인 상세 */
         main a > span {font-size:0.91rem; letter-spacing:-0.5px; line-height:1.5;}
         main a .name {padding:0 0 5px; margin:0 0 5px; border-bottom:1px solid #ccc;}

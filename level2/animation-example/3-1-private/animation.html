@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>애니메이션</title>
+    <link rel="stylesheet" href="./styles/reset.css">
+    <style>
+        /* 애니메이션 제작 순서
+        1. 목표 정하기
+        2. @keyframes 장면 생성
+        3. 특정요소 animation
+        */
+        .bg {
+            height:100vh; background:pink;
+            background-image:url(https://img.freepik.com/free-photo/white-cloud-blue-sky-sea_74190-4488.jpg?semt=ais_hybrid&w=740&q=80);
+            /* 배경이미지를 움직이고 싶으면 1. 백그라운드 사이즈 크기 설정 2. position 설정 3.animation 설정 */
+            background-size:300%;
+            background-position:0 0;/* 초기위치 */
+            animation:bg 100s linear both;
+            overflow:hidden;
+        }
+        .bg p {animation:ball_move1 2s ease infinite both;}
+        .bg p img {animation:ball_rotate 1s linear infinite;} /* animation:keyframes의 이름 시간 가속도 재생횟수(단위가없음,단위가있음 재생속도) 재생반복 */
+        @keyframes bg {
+            0% {background-position-x:0;}/* x,y를 사용하면 정확하게 위치를 잡을 수 있음 */
+            100% {background-position-x:200%;}
+        }
+        .bg h1 {}
+        .bg h1 img {animation:ball_move2 2s ease infinite both;}
+        @keyframes ball_move1 {
+            /* rotate -> 중심축 */
+            0% {transform:translate(0,0);}
+            30% {transform:translate(500px, 0);}
+            60% {transform:translate(250px, 500px);}
+            100% {transform:translate(0, 0);}
+        }
+        @keyframes ball_move2 {
+            0% {transform:translate(0, 0) rotate(0);}
+            50% {transform:translate(500px, 500px) rotate(180deg);}
+            70% {transform:translate(250px, 250px) rotate(0360deg);}
+            100% {transform:translate(0, 0);}
+        }
+        @keyframes ball_rotate {
+            from {transform:rotate(0);}
+            to {transform:rotate(360deg);}
+        }
+    </style>
+</head>
+<body>
+    <div class="bg">
+        <p><img src="https://cdn-icons-png.flaticon.com/128/33/33736.png" alt=""></p>
+        <h1><img src="https://cdn-icons-png.flaticon.com/128/17697/17697475.png" alt=""></h1>
+    </div>
+</body>
+</html>
