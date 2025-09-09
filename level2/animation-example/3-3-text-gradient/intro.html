@@ -7,96 +7,153 @@
     <link rel="stylesheet" href="../1-0-prospecs/reset.css">
     <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
     <style>
+        * {margin:0; padding:0; box-sizing:border-box;}
+        /* 모든 값에 margin,padding 초기화 시키고 box크기를 계산 할때에는 padding과 border까지 포함하는 것 */
         body {background:#000; overflow:hidden;}
-        main  {width:100%; height:100vh; display:flex; flex-flow:column nowrap; justify-content: center; align-items: center;}
-        .images {
-            filter:brightness(0) invert(1); 
-            width:100%; position:relative;
+        main  {
+            width:100%; height:100vh; 
+            display:flex; flex-direction:column;/* 아이템(방향) 축을 바꿈-> 위에서 아래로 */
+            justify-content: center; align-items: center;
+            position:relative;
         }
-        .images .icon {
-            display:block; position:absolute;
-            width:100%; height:100vh; z-index:9;
+        main .title-container {
+            display:flex; flex-direction:column;
+            align-items:center;
+            transform:translateY(-30px);
+            animation:float 6s ease-in-out infinite
         }
-        .images .star1 {top:; left:; animation:sparkle 1s infinite alternate;}
-        .images .star2 {top:; left:; animation:sparkle 1s infinite alternate;}
-        .images .star3 {top:; left:; animation:sparkle 1s infinite alternate;}
-        .images .star4 {top:; left:; animation:sparkle 1s infinite alternate;}
-        .images .star5 {top:; left:; animation:sparkle 1s infinite alternate;}
-        .images .star6 {top:; left:; animation:sparkle 1s infinite alternate;}
-        main {position:relative; z-index:10;}
-        main p {
-            text-align:center;
-            filter:brightness(0) invert(1)
-            drop-shadow(0 0 10px rgba(225,255,255,0.8))
-            drop-shadow(0 0 20px rgba(225,255,255,0.6))
-            drop-shadow(0 0 40px rgba(225,255,255,0.4));
-        }
-        main p img {width:15%; transform-origin:center top;}
-        main p:nth-child(1) img {animation:up 4s linear infinite;}
-        main p:last-child img {animation:down 4s linear infinite;}
         main h1 {
-            margin:30px auto;
-            font-weight:700; font-size:5rem; text-align:center;
-            background:linear-gradient(to right, #7A73D1, #FDB7EA, #4D55CC, #7A73D1);
+            margin:0 auto 30px;
+            font-weight:800; font-size:4.5rem; text-align:center;
+            background:linear-gradient(50deg, #7A73D1, #FDB7EA, #4D55CC, #7A73D1);
             -webkit-background-clip:text;
             -webkit-text-fill-color:transparent;
             background-clip: text;
             color:transparent;
-            background-size:400%;
-            animation:bg_gradient 10s linear infinite;
+            background-size:300%;
+            animation:bg_shift 8s ease-in-out infinite;
         }
         main h2 {
-            margin-bottom:30px;
             font-family: 'Black Ops One';
-            text-shadow:0 0 10px rgba(255,255,255,0.2),
-            0 0 20px rgba(255,255,255,0.5);
-            font-size:10rem; text-align: center; font-weight:700; 
+            text-shadow:0 0 30px rgba(255,255,255,0.3);
+            font-size:8rem; text-align: center; font-weight:700; 
             background: url(https://i.pinimg.com/1200x/84/9f/c8/849fc8ad5947ca38a1d0a49da6f22a0e.jpg) center / cover;
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
             background-clip: text;
             color: transparent;
-            position:relative; z-index:1;
+            transform:scale(-1);
+            animation:pulse-glow 4s ease-in-out infinite;
         }
-        main p:nth-last-child(2) {}
+        main .title-container .arrow {
+            width:15px; height:15px; 
+            position:absolute;
+            animation:bounce 2s infinite;
+        }
+        main .title-container .arrow span {
+            background:#fff; width: 100%; height:100%;
+            display:block; transform:rotate(45deg);
+        }
+        main .title-container .top {
+            top: -120px; left: 50%;
+            transform: translateX(-50%) rotate(60deg);
+            animation-delay: -1s;
+        }
+        main .title-container .bottom {
+            bottom: -120px; left: 50%;
+            transform: translateX(-50%);
+        }
+        .bg-particles {
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%;
+            z-index:1;
+        }
+        .bg-particles .particle {
+            position: absolute; width: 5px; height: 5px;
+            background: rgba(255, 255, 255, 1); border-radius: 50%;
+            animation: twinkle 4s linear infinite;
+        }
+        .bg-particles .particle:nth-child(1) {left: 10%; top: 20%; animation-delay: 0s;}
+        .bg-particles .particle:nth-child(2) {left: 80%; top: 30%; animation-delay: 1s;}
+        .bg-particles .particle:nth-child(3) {left: 25%; top: 70%; animation-delay: 2s;}
+        .bg-particles .particle:nth-child(4) {left: 70%; top: 15%; animation-delay: 3s;}
+        .bg-particles .particle:nth-child(5) {left: 15%; top: 80%; animation-delay: 1.5s;}
+        .bg-particles .particle:nth-child(6) {left: 90%; top: 60%; animation-delay: 2.5s;}
+        .bg-particles .particle:nth-child(7) {left: 45%; top: 25%; animation-delay: 0.5s;}
+        .bg-particles .particle:nth-child(8) {left: 60%; top: 85%; animation-delay: 3.5s;}
         footer {text-align:end;}
         footer img {width:24px; height:24px;}
         footer img:nth-child(1){filter:brightness(0) invert(1);}
-        @keyframes bg_gradient {
+        /* @keyframes bg_gradient {
             0% {background-position-x:0;}
             100% {background-position-x:400%;}
+        } */
+        @keyframes float {
+            0%, 100% { transform: translateY(-30px); }
+            50% { transform: translateY(-50px); }
         }
-        @keyframes up {
+        @keyframes bg_shift {
+            0%,100% {background-position:0% 50%;}
+            25% {background-position:100% 50%;}
+            50% {background-position:100% 100%;}
+            75% {background-position:0% 100%;}
+        }
+        @keyframes pulse-glow {
+            0%,100% {transform: scale(1); text-shadow: 0 0 30px rgba(255,255,255,0.3);}
+            50% {transform: scale(1.05); text-shadow: 0 0 50px rgba(255,255,255,0.6);}
+        }
+        @keyframes bounce {
+            0%, 100% {transform: translateX(-50%) translateY(0px);}
+            50% { transform: translateX(-50%) translateY(-15px);}
+        }
+        @keyframes slide-up {
+            from { 
+                transform: translateX(-50%) translateY(100px); 
+                opacity: 0; 
+            }
+            to { 
+                transform: translateX(-50%) translateY(0); 
+                opacity: 1; 
+            }
+        }
+        @keyframes twinkle {
+            0%, 100% { opacity: 0; transform: scale(0); }
+            50% { opacity: 1; transform: scale(1); }
+        }
+        /* @keyframes up {
             0% {transform:translateY(0);}
             100% {transform:translateY(40px);}
         }
         @keyframes down {
             0% {transform:translateY(0);}
             100% {transform:translateY(-50px);}
-        }
-        @keyframes sparkle {
+        } */
+        /* @keyframes sparkle {
             0% {transform: translate(0, 0); opacity:1;}
             25% {transform: translate(5px, -5px); opacity: 2;}
             50% {transform: translate(20px, -20px); opacity: 0.5;}
             75% {transform: translate(100px, -100px); opacity: 1;}
             100% {transform: translate(0); opacity: 2; }
-        }
+        } */
     </style>
 </head>
 <body>
-    <div class="images">
-        <span class="icon star1"><img src="https://cdn-icons-png.flaticon.com/128/8369/8369316.png" alt=""></span>
-        <span class="icon star2"><img src="https://cdn-icons-png.flaticon.com/128/8369/8369316.png" alt=""></span>
-        <span class="icon star3"><img src="https://cdn-icons-png.flaticon.com/128/8369/8369316.png" alt=""></span>
-        <span class="icon star4"><img src="https://cdn-icons-png.flaticon.com/128/8369/8369316.png" alt=""></span>
-        <span class="icon star5"><img src="https://cdn-icons-png.flaticon.com/128/8369/8369316.png" alt=""></span>
-        <span class="icon star6"><img src="https://cdn-icons-png.flaticon.com/128/8369/8369316.png" alt=""></span>
+    <div class="bg-particles">
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
+        <span class="particle"></span>
     </div>
     <main>
-        <p><img src="https://cdn-icons-png.flaticon.com/128/105/105212.png" alt=""></p>
-        <h1>CREATIVE</h1>
-        <h2>WORKS</h2>
-        <P><img src="https://cdn-icons-png.flaticon.com/128/105/105212.png" alt=""></P>
+        <div class="title-container">
+            <div class="arrow top"><span></span></div>
+            <h1>CREATIVE</h1>
+            <h2>WORKS</h2>
+            <div class="arrow bottom"><span></span></div>
+        </div>
     </main>
     <footer>
         <img src="./images/git.png" alt="">
